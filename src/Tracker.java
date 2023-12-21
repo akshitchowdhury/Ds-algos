@@ -8,55 +8,30 @@ public class Tracker {
 
         int[] tracker = new int [nums.length];
 
-        int count = 0;
+        int count;
 
-        sort(nums);
-        int i = 0;
-        while(i< nums.length-1){
-            int j = i+1;
-            while(j<nums.length)
-            if(nums[i]>nums[j]){
 
-                count++;
-                j++;
+        for (int i = 0; i < nums.length; i++) {
+            count = 0;
+            for (int j = 0; j < nums.length; j++) {
+                if (nums[j] < nums[i]) {
+                    count++;
+                }
             }
-            i++;
+            tracker[i] = count;
         }
-
 
 
         return tracker;
-    }
-
-    static int[] sort(int [] arr){
-
-        int i = 0;
-
-        while(i<arr.length-1){
-
-            int temp;
-            int j = i+1;
-            while(j<arr.length){
-                if(arr[j]> arr[i]){
-                    temp = arr[i];
-                    arr[i]  =arr[j];
-                    arr[j] = temp;
-                }
-                j++;
-            }
-
-            i++;
-        }
-        return arr;
-
     }
 
     public static void main(String[] args) {
         int [] arr = {1,5,2,2,8};
         Tracker mode  =new Tracker();
 
-        mode.sort(arr);
+//        mode.sort(arr);
+        mode.smallerNumbersThanCurrent(arr);
 
-        System.out.println(Arrays.toString(arr));
+        System.out.println(mode.smallerNumbersThanCurrent(arr));
     }
 }

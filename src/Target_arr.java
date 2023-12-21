@@ -16,7 +16,7 @@ public class Target_arr {
 
         for(int j=0; j< target.size(); j++){
 
-            ntarget[j] = target.indexOf(j);
+            ntarget[j] = target.get(j);
         }
 
         return ntarget;

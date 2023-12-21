@@ -10,6 +10,19 @@ public class Tracker {
 
         int count = 0;
 
+        sort(nums);
+        int i = 0;
+        while(i< nums.length-1){
+            int j = i+1;
+            while(j<nums.length)
+            if(nums[i]>nums[j]){
+
+                count++;
+                j++;
+            }
+            i++;
+        }
+
 
 
         return tracker;
@@ -18,9 +31,11 @@ public class Tracker {
     static int[] sort(int [] arr){
 
         int i = 0;
-        int j = i+1;
+
         while(i<arr.length-1){
+
             int temp;
+            int j = i+1;
             while(j<arr.length){
                 if(arr[j]> arr[i]){
                     temp = arr[i];
@@ -33,8 +48,6 @@ public class Tracker {
             i++;
         }
         return arr;
-
-
 
     }
 

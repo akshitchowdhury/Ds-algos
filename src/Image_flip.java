@@ -2,51 +2,51 @@ public class Image_flip {
     public int[][] flipAndInvertImage(int[][] image) {
 
 
-    for(int row = 0; row< image.length; row++ ){
-
-        for(int col = 0; col< image[row].length; col++ ){
+        for(int row = 0; row< image.length; row++ ){
 
             //1st  reverse
+            reverse(image[row]);
+            for(int col = 0; col< image[row].length; col++ ){
 
-        reverse(image[row]);
-            //2nd invert
+                //2nd invert
 
-        if(image[row][col] == 0){
+                //  image[row][col] = 1 - image[row][col];
+                if(image[row][col] == 0){
 
-            image[row][col] = 1;
+                    image[row][col] = 1;
+                }
+
+                else{
+                    image[row][col] = 0;
+                }
+
+            }
         }
-
-        else{
-            image[row][col] = 0;
-        }
-
-
-        }
-    }
 
 
         return image;
 
     }
+    static void reverse(int[] arr) {
+        int left = 0;
+        int right = arr.length - 1;
 
+        while (left < right) {
+            // Swap elements at positions left and right
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
 
-    static int[] reverse(int[] arr){
-
-
-        for(int i=0; i<arr.length; i++){
-
-            int j = arr.length - 1 - i;  // Calculate the index from the end
-
-            // Swap elements at positions i and j
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-
-
+            // Move towards the center
+            left++;
+            right--;
         }
-
-        return arr;
     }
-
-
 }
+
+
+
+
+
+
+

@@ -16,6 +16,6 @@ public class Transpose {
             }
 
 
-        return matrix;
+        return store;
     }
 }

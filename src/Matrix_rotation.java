@@ -3,27 +3,28 @@ import java.util.Arrays;
 public class Matrix_rotation {
 
 
-    public static void main(String[] args) {
-
-        int mat[][] = {{0, 0}, {0, 1}};
-        int target[][] = {{0, 0}, {1, 0}};
-
-        Matrix_rotation res = new Matrix_rotation();
-        System.out.println(res.findRotation(mat, target));
-    }
-
     public boolean findRotation(int[][] mat, int[][] target) {
-        int i = 0;
-        boolean check = true;  // Initialize as true
+        int n = mat.length;
 
-        while (i < mat.length) {
-            if (!Arrays.toString(mat[i]).equals(Arrays.toString(target[target.length - 1 - i]))) {
-                check = false;
-                break;  // Break out of the loop once a mismatch is found
+        for (int i = 0; i < 4; i++) {
+            if (Arrays.deepEquals(mat, target)) {
+                return true;
             }
-            i++;
+            mat = rotateMatrix(mat, n);
         }
 
-        return check;
+        return false;
+    }
+
+    private int[][] rotateMatrix(int[][] matrix, int n) {
+        int[][] rotated = new int[n][n];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                rotated[j][n - 1 - i] = matrix[i][j];
+            }
+        }
+
+        return rotated;
     }
 }

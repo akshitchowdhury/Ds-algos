@@ -6,23 +6,24 @@ public class Max_wealth {
 
         int maximum = 0;
 
-        int store = 0;
+        int proto [] = new int [accounts.length];
 
         for(int i=0; i< accounts.length; i++){
+            int store = 0;
 
-            int proto [] = new int [accounts.length];
             for(int j=0; j< accounts[i].length; j++){
 
                 store = store+ accounts[i][j];
 
-                proto[i] = store;
+
             }
+            proto[i] = store;
 
-            Arrays.sort(proto);
-
-            maximum = proto[proto.length-1];
 
         }
+        Arrays.sort(proto);
+
+        maximum = proto[proto.length-1];
 
         return maximum;
     }

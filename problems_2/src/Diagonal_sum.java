@@ -3,47 +3,33 @@ public class Diagonal_sum {
 
         int res1 = 0;
         int res2 = 0;
-
+        int fres = -1;
         int mid = mat.length/2;
-        for(int row = 0; row<mid; row++){
-            int i = 0;
-            int j = mat[row].length-1;
-            int sum1= 0;
-            while(i<=j){
+        if(mat.length>1) {
 
-                sum1 += mat[row][i]+mat[row][j];
-                i++;
-                j--;
+                for(int row =0 ; row<mat.length; row++){
 
-                if(i==j){
-                    sum1 = mat[row][j];
+                    int i = row;
+                    int j = mat.length-1-i;
+
+                    res1 += mat[row][i];
+                    res2 += mat[row][j];
+
                 }
+                fres = res1+res2;
 
-            }
-            res1 = sum1;
-
+                if(mat.length%2==1){
+                    int common = mat[mid][mid];
+                    fres -= common;
+                }
         }
 
-
-        for(int row = mat.length-1; row>mid; row--){
-            int i = 0;
-            int j = mat[row].length-1;
-            int sum2= 0;
-            while(i<=j){
-
-                sum2 += mat[row][i]+mat[row][j];
-                i++;
-                j--;
-
-                if(i==j){
-                    sum2 = mat[row][j];
-                }
-
+        else{
+            fres = mat[0][0];
+            return fres;
             }
-            res2 = sum2;
 
-        }
 
-        return res1+res2;
+        return fres;
     }
 }

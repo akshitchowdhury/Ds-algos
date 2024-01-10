@@ -13,7 +13,6 @@ public class Zero_sum {
 
     int arr[] = new int[5];
 
-    int []stock = new int[arr.length];
     for(int i =0; i<arr.length; i++){
         double num = Math.random();
         int whole = (int) Math.round(num*10);
@@ -24,7 +23,7 @@ public class Zero_sum {
         }
         else if(arr.length>1){
 
-            if(i!=arr.length-1-i){
+            if(arr.length%2==0){
                 arr[i] = whole;
                 arr[arr.length-1-i] = -1*whole;
             }

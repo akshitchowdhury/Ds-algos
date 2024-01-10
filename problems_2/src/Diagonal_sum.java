@@ -25,7 +25,7 @@ public class Diagonal_sum {
         }
 
 
-        for(int row = mat.length-1; row>=mid; row--){
+        for(int row = mat.length-1; row>mid; row--){
             int i = 0;
             int j = mat[row].length-1;
             int sum2= 0;

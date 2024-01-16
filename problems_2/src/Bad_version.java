@@ -20,6 +20,7 @@ public class Bad_version {
                 right = mid;
             }
 
+
         }
         return -1;
 

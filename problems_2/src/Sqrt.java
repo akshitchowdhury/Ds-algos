@@ -10,13 +10,13 @@ public class Sqrt {
 
         }
 
-        return (int) x;
+        return (int) r;
     }
 
     public static void main(String[] args) {
 
         Sqrt sq = new Sqrt();
 
-        sq.mySqrt(25);
+        System.out.println(sq.mySqrt(25)); ;
     }
 }
